@@ -53,12 +53,7 @@ export default function App() {
           )
         }}/>
         
-         {/* options={{
-          tabBarIcon: ({color,size}) =>(
-
-            <Fontisto name="player-settings" size={size} color={color} />
-          )
-        }}/> */}
+   
       </Tab.Navigator>
       
     </NavigationContainer>
@@ -67,13 +62,6 @@ export default function App() {
 }
 
 
-// const Home =  () => {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="CoinDetails" component={CoinDetails} />
-//     </Tab.Navigator>
-//   );
-// }
 
 // export default Home
 // const styles = StyleSheet.create({

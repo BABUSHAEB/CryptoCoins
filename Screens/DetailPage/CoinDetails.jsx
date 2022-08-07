@@ -3,14 +3,11 @@ import { Text, StyleSheet, Image, View } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
-import { NavigationContainer } from '@react-navigation/native';
 
 export default function CoinDetails() {
-    const Tab = createBottomTabNavigator();
-    return (
-        <NavigationContainer>
 
-        <Tab.Screen >
+    return (
+
         <View>
             <View style={styles.HeaderContainer}>
                 <MaterialIcons style={styles.Title} name="keyboard-backspace" />
@@ -18,17 +15,22 @@ export default function CoinDetails() {
                 <FontAwesome style={styles.Title} name="bell" />
             </View>
             <View style={styles.HeadingCenter}>
-                <Image source={{ uri: "https://www.abhisheksingh.cf/static/media/Photo.f69b0ab64fda05daf515.png" }} style={styles.ImageContainer} />
+                <Image source={{ uri: "https://apimachine-s3.s3.us-east-2.amazonaws.com/coinImages/bitcoin.png" }} style={styles.ImageContainer} />
                 <Text style={styles.BalanceAmount}>$ 2.564.25</Text>
                 <View style={{ flexDirection: "row" }}>
                     <Text >+ $ 525.50</Text>
-                    <Text >  <Feather name="arrow-up-right" />$ 2.564.25</Text>
+                    <Text style={{ color: "green", fontWeight: "bold" }}>  <Feather name="arrow-up-right" />$ 2.564.25</Text>
                 </View>
             </View>
-            <View></View>
+            <View style={styles.BottonContainer}>
+         
+                    <Text style={styles.BuyBtn}><Feather name="arrow-up-right" /> Buy</Text>
+                
+                    <Text style={styles.SellBtn}><Feather name="arrow-down-left" /> Sell</Text>
+    
+            </View>
         </View>
-        </Tab.Screen>
-        </NavigationContainer>
+
     )
 }
 
@@ -49,10 +51,49 @@ const styles = StyleSheet.create({
         marginLeft: "auto"
 
     },
-    BalanceAmount:{
-        fontSize:20,
-        fontWeight:"bold",
-        textAlign:"center"
+    BalanceAmount: {
+        fontSize: 20,
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    ImageContainer: {
+        height: 30,
+        width: 30,
+        borderRadius: 50,
+        margin: 10,
+        marginRight: "auto",
+        marginLeft: "auto"
+
+    },
+    BuyBtn: {
+        fontSize: 17,
+        fontWeight: "bold",
+        backgroundColor: "#42dc9a",
+        width: 70, padding: 5,
+        borderRadius: 10,
+        margin: 0,
+        marginRight:5
+
+
+    },
+    SellBtn: {
+        fontSize: 17,
+        fontWeight: "bold",
+        backgroundColor: "#fd6086",
+        width: 70, 
+        padding: 5,
+        borderRadius: 10,
+        margin: 0,
+
+
+
+    },
+    BottonContainer: {
+  
+        flexDirection: "row",
+        justifyContent: 'center',
+       
+
     }
 
 })
